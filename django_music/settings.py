@@ -27,10 +27,12 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+# SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-_lgxw0d=+*2+v+!-(n63wg(v_afy5n+rt$wpi^46o46dd8r&5$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+# DEBUG = env('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'django_music.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["albums/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,18 +86,19 @@ WSGI_APPLICATION = 'django_music.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': env.db(),
+# DATABASES = {
+    # 'DATABASE_URL': 'sqlite:///db.sqlite3'
+    # 'default': env.db(),
     # 'extra': env.db_url(
     #     'SQLITE_URL',
     #     default='sqlite:////tmp/my-tmp-sqlite.db'
     # )
-}
+# }
 
-CACHES = {
-    'default': env.cache(),
-    'redis': env.cache_url('REDIS_URL')
-}
+# CACHES = {
+#     'default': env.cache(),
+#     'redis': env.cache_url('REDIS_URL')
+# }
 
 
 # Password validation
