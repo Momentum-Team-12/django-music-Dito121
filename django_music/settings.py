@@ -67,7 +67,7 @@ ROOT_URLCONF = 'django_music.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["albums/templates/"],
+        'DIRS': ["/albums/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,12 +87,12 @@ WSGI_APPLICATION = 'django_music.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 # DATABASES = {
-    # 'DATABASE_URL': 'sqlite:///db.sqlite3'
-    # 'default': env.db(),
-    # 'extra': env.db_url(
-    #     'SQLITE_URL',
-    #     default='sqlite:////tmp/my-tmp-sqlite.db'
-    # )
+#     'DATABASE_URL': 'sqlite:///db.sqlite3'
+#     'default': env.db(),
+#     'extra': env.db_url(
+#         'SQLITE_URL',
+#         default='sqlite:////tmp/my-tmp-sqlite.db'
+#     )
 # }
 
 # CACHES = {
