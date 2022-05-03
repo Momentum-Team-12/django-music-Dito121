@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'django_music.wsgi.application'
 
 DATABASES = {
     'default': env.db(),
-    'extra': env.db_url(
-        'SQLITE_URL',
-        default='sqlite:////tmp/my-tmp-sqlite.db'
-    )
+    # 'extra': env.db_url(
+    #     'SQLITE_URL',
+    #     default='sqlite:////tmp/my-tmp-sqlite.db'
+    # )
 }
 
 CACHES = {
