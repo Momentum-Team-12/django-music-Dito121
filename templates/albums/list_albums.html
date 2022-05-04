@@ -2,6 +2,7 @@
 {% load static %}
 {% block page_content %}
 <h1>Albums</h1>
+<a href="{% url 'add_album' %}" class="btn btn-primary"> Add Album </a>
 <div class="row">
 {% for album in albums %}
     <div class="col-md-4">
@@ -13,6 +14,8 @@
                 <p class="card-text">{{ album.released }}</p>
                 <p class="card-text">{{ album.created }}</p>
                 <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary"> Read More </a>
+                <a href="{% url 'edit_album' album.pk %}" class="btn btn-primary"> Edit Album </a>
+                <a href="{% url 'delete_album' album.pk %}" class="btn btn-primary"> Delete Album </a>
             </div>
         </div>
     </div>
