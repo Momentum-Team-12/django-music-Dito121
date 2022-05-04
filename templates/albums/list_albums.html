@@ -2,7 +2,7 @@
 {% load static %}
 {% block page_content %}
 <h1>Albums</h1>
-<div class="row">
+<!-- <div class="row">
 {% for album in albums %}
     <div class="col-md-4">
         <div class="card mb-2">
@@ -12,13 +12,12 @@
                 <p class="card-text">{{ album.artist }}</p>
                 <p class="card-text">{{ album.released }}</p>
                 <p class="card-text">{{ album.created_at }}</p>
-                <a href="{% url 'album_details' album.pk %}"
-                   class="btn btn-primary">
+                <a href="{% url 'album_details' album.pk %}" class="btn btn-primary">
                     Read More
                 </a>
             </div>
         </div>
     </div>
     {% endfor %}
-</div>
+</div> -->
 {% endblock %}

@@ -14,25 +14,23 @@ from pathlib import Path
 import environ
 import os
 
-# env = environ.Env(
-#     DEBUG=(bool, False)
-# )
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = env('SECRET_KEY')
-SECRET_KEY = 'django-insecure-_lgxw0d=+*2+v+!-(n63wg(v_afy5n+rt$wpi^46o46dd8r&5$'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = env('DEBUG')
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -46,9 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'albums',
     'django_extensions',
     'debug_toolbar',
+    'albums', 
 ]
 
 MIDDLEWARE = [
@@ -67,7 +65,8 @@ ROOT_URLCONF = 'django_music.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["/albums/templates/"],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # 'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,14 +85,9 @@ WSGI_APPLICATION = 'django_music.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'DATABASE_URL': 'sqlite:///db.sqlite3'
-#     'default': env.db(),
-#     'extra': env.db_url(
-#         'SQLITE_URL',
-#         default='sqlite:////tmp/my-tmp-sqlite.db'
-#     )
-# }
+DATABASES = {
+    'default': env.db(),
+}
 
 # CACHES = {
 #     'default': env.cache(),
