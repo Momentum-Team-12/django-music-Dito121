@@ -11,8 +11,8 @@
                 <h5 class="card-title">{{ album.title }}</h5>
                 <p class="card-text">{{ album.artist }}</p>
                 <p class="card-text">{{ album.released }}</p>
-                <p class="card-text">{{ album.created_at }}</p>
-                
+                <p class="card-text">{{ album.created }}</p>
+                <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary"> Read More </a>
             </div>
         </div>
     </div>
