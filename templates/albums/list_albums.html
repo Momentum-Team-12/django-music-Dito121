@@ -11,8 +11,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{ album.title }}</h5>
                 <p class="card-text">{{ album.artist }}</p>
-                <p class="card-text">{{ album.released }}</p>
-                <p class="card-text">{{ album.created }}</p>
+                <p class="card-text">Released on: {{ album.released }}</p>
+                <p class="card-text">Date added: {{ album.created }}</p>
                 <a href="{% url 'album_detail' album.pk %}" class="btn btn-primary"> Read More </a>
                 <a href="{% url 'edit_album' album.pk %}" class="btn btn-primary"> Edit Album </a>
                 <a href="{% url 'delete_album' album.pk %}" class="btn btn-primary"> Delete Album </a>

@@ -36,7 +36,7 @@ def edit_album(request, pk):
 
     return render(request, "albums/edit_album.html", {
         "form": form,
-        "album": album
+        "album": album,
     })
 
 
