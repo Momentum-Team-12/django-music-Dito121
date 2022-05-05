@@ -80,6 +80,8 @@ TEMPLATES = [
     },
 ]
 
+FILE_PATH_FIELD_DIRECTORY = '/Users/gerardoayes/Documents/Momentum/Homework/Phase2/django-music-Dito121/albums/static/img/'
+
 WSGI_APPLICATION = 'django_music.wsgi.application'
 
 
